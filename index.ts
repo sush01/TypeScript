@@ -40,6 +40,7 @@ interface Post {
   published:boolean;
 
 }
+
 const printPost = (postToPrint:  Post) => {
   return `${postToPrint.title} (${postToPrint.daysOld} days old)`;
 };
@@ -65,3 +66,28 @@ myCar.color = 'green';
 
 //Decorators
 
+
+// 
+class ValueHolder <T>{
+  value: T;
+
+}
+
+//Generic Functions
+const numberWrapper = (value:number): number[] => {
+  return [value];
+}
+const stringWrapper = (value:string): string[] => {
+  return [value];
+}
+const booleanWrapper = (value:boolean): boolean[] => {
+  return [value];
+}
+
+
+const valueWrapper = <T> (value:T): T[] => {
+  return [value];
+
+};
+
+valueWrapper<number>(10);
